@@ -297,7 +297,15 @@ Rails.application.reloader.to_prepare do
     # Add a new OmniAuth provider. Check the wiki for more information on setting
     # up on your models and hooks.
     # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+    require 'logger'
+    logger = ActiveSupport::Logger.new(STDOUT)
+    logger.info "============== Setting up Providers in Devise.rb ================"
+
     Avalon::Authentication::Providers.each do |provider|
+      logger.info "=============== Cycling over Providers ==============="
+      logger.info " Provider: #{provider[:provider]}"
+
       if provider[:provider] == :lti
 	provider[:params].merge!({consumers: Avalon::Lti::Configuration})
       end
@@ -315,6 +323,8 @@ Rails.application.reloader.to_prepare do
       rescue LoadError
 	require "omniauth-#{provider[:provider]}"
       end
+      logger.info "=============== Configuring provider ==============="
+      logger.info "Params: #{params}"
       config.omniauth provider[:provider], *params
     end
 
