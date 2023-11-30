@@ -97,7 +97,7 @@ services:
       - DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
       - FEDORA_NAMESPACE=avalon
       - FEDORA_URL=http://fedoraAdmin:fedoraAdmin@fedora:8080/fedora/rest
-      - RAILS_ENV=development
+      - RAILS_ENV=production
       - RAILS_ADDITIONAL_HOSTS=avalon
       - SETTINGS__REDIS__HOST=redis
       - SETTINGS__REDIS__PORT=6379
@@ -123,6 +123,11 @@ services:
       - SETTINGS__STREAMING__SERVER=nginx
       - SETTINGS__STREAMING__STREAM_TOKEN_TTL=20
       - SYSTEM_GROUPS=administrator,group_manager,manager
+      - SETTINGS__AUTH__CONFIGURATION__UCSD__NAME=UC San Diego
+      - SETTINGS__AUTH__CONFIGURATION__UCSD__PROVIDER=google_oauth2
+      - SETTINGS__AUTH__CONFIGURATION__UCSD__PARAMS__CLIENT_ID=156699098128-v5epbnvdf2r0jfsc54d5lcf32dlv881b.apps.googleusercontent.com
+      - SETTINGS__AUTH__CONFIGURATION__UCSD__PARAMS__CLIENT_SECRET=ZgarE4O76IxvhEHXILz3vAFe
+
     volumes:
       - .:/home/app/avalon
       - npms:/home/app/avalon/node_modules
