@@ -629,9 +629,20 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
+    omniauth-google-oauth2 (1.0.1)
+      jwt (>= 2.0)
+      oauth2 (~> 1.1)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.7.1)
     omniauth-identity (3.0.9)
       bcrypt
       omniauth
+    omniauth-oauth2 (1.7.3)
+      oauth2 (>= 1.4, < 3)
+      omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     omniauth-saml (2.1.0)
       omniauth (~> 2.0)
       ruby-saml (~> 1.12)
@@ -1069,8 +1080,10 @@ DEPENDENCIES
   okcomputer
   om!
   omniauth (~> 2.0)
+  omniauth-google-oauth2
   omniauth-identity (>= 2.0.0)
   omniauth-lti!
+  omniauth-rails_csrf_protection (~> 1.0)
   omniauth-saml (~> 2.0)
   parallel
   pg
