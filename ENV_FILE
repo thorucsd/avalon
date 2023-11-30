@@ -1,0 +1,23 @@
+# Required Settings
+APP_NAME=avalon
+AVALON_BRANCH=main
+SETTINGS__DOMAIN=http://lib-avalon-stage.ucsd.edu/
+STREAMING_HOST=lib-avalon-stage.ucsd.edu
+AVALON_DB_PASSWORD=password
+FEDORA_DB_PASSWORD=password
+SECRET_KEY_BASE=avalonkey
+
+# Recommended Settings
+EMAIL_COMMENTS=avalon-comments@example.edu
+EMAIL_NOTIFICATION=avalon-notifications@example.edu
+EMAIL_SUPPORT=avalon-support@example.edu
+SMTP_ADDRESS=smtp.ucsd.edu
+SMTP_PORT=587
+
+# Optional Settings
+# Z3950_HOST=
+# Z3950_PORT=
+# Z3950_DATABASE=
+# Z3950_ATTRIBUTE=
+# LTI_AUTH_KEY=
+# LTI_AUTH_SECRET=
